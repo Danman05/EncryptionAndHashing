@@ -10,6 +10,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        // GUI Navigation
         ConsoleKey ck; ;
         do
         {
@@ -37,6 +38,12 @@ class Program
             }
         } while (ck != ConsoleKey.D0);
     }
+
+    /// <summary>
+    /// SHA256, Encrypts a value
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
     private static string? ToSha256(string value)
     {
         using SHA256 sha256 = SHA256.Create();
@@ -50,6 +57,12 @@ class Program
         return sb.ToString();
     }
 
+    /// <summary>
+    /// HMACSHA256, Encrypts a value and key
+    /// </summary>
+    /// <param name="value"></param>
+    /// <param name="key"></param>
+    /// <returns></returns>
     private static string? ToHMACSHA256(string value, string key)
     {
         using HMACSHA256 hmacSha256 = new HMACSHA256();
